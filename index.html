@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Cat Life</title>
 
   <meta charset="utf-8">
   <style type="text/css">
     body {
-      background-image: url("gradient-background.jpg");
+      /*background-image: url("gradient-background.jpg");*/
+      /*background: linear-gradient(magenta,red);*/
+      background: repeating-radial-gradient(indianred, lightcoral, salmon, darksalmon, lightsalmon, crimson,red,firebrick, darkred, mediumvioletred, palevioletred, deeppink, hotpink, lightpink, pink);
     }
 
     img { max-width: 100%; }
@@ -25,11 +27,31 @@
       to make calculating srcset easier for us :) */
       width: 55%;
     }
+
+    .catbook {
+      margin: auto;
+      max-width: 90%;
+      background-color: red;
+      background-image: url("space-header.jpg");
+      text-align: center;
+      color: white;
+    }
+    .catbook a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .catbook ul {
+      list-style-type: square;
+      list-style-position: inside;
+      margin-left: -3rem;
+    }
+
   </style>
 </head>
 
 <body>
-  <header>
+  <header class="catbook">
     <h1>Cat Life</h1>
     <nav>
       <ul>
@@ -54,11 +76,17 @@
       </div>
 
       <div class="photo-frame">
-        <img src="dragon.jpg" alt="a fire-breathing cat">
+        <img srcset="dragon.jpg 1280w, dragon-800w.jpg 800w, dragon-400w.jpg 400w"
+              sizes="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
+              src="dragon-800w.jpg"
+              alt="cat dat breathes the FIRE">
       </div>
 
       <div class="photo-frame">
-        <img src="grr.jpg" alt="a cat making a weird face">
+        <img srcset="grr.jpg 1280w, grr-800w.jpg 800w, grr-400w.jpg 400w"
+              sizes="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
+              src="grr-800w.jpg"
+              alt="annnnngry kittay">
       </div>
     </div>
   </section>
